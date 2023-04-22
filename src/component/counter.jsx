@@ -4,29 +4,51 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = {
         count : 0,
-        imageURL : "https://picsum.photos/200",
-        tags:['tag1','tag2','tag3']
+        // imageURL : "https://picsum.photos/200",
+        tags:["tag1","tag2","tag3"]
     };
 
     // renderTags(){
-    //     if(this.state.tags.length ===0) return <p>There are no tags.</p>
+    //     if(this.state.tags.length ===0) return <p>There are no tags.</p>;
+    //     return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
+
     // }
 
-  
 
+    // constructor(){
+    //     super();
+    //     this.handleIncrement= this.handleIncrement.bind(this);
+    // }
+
+    // handleIncrement(){
+    //     console.log('increment clicked',this);
+    handleIncrement = product=>{
+
+        console.log(product);
+        this.setState({count: this.state.count+1});
+
+
+        // console.log('increment clicked',this);
+        //this -- obj.method();
+        //function();
+
+    };
+
+    // doHandleIncrement = () => {
+
+    //     this.handleIncrement({id:1});
+
+    // };
 
     render() { 
-
-     
-
-
-
         return (
         <div>
-            <img  src={this.state.imageURL} alt="hi"/>
+            {/* <img  src={this.state.image URL} alt="hi"/> */}
             {/* Inline styling in next line..can be done by referencing the property ('made under the classes) */}
             <span style={{ color: "black",fontWeight: 'bold', fontSize :16 }} className={this.getBadgeClasses()}>{this.formatCount()}</span> 
-            <button className='btn btn-secondary btn-sm'>Increment</button>
+            <button onClick = { () => this.handleIncrement({id:1})} className='btn btn-secondary btn-sm'>Increment</button>
+            {this.state.tags.length === 0 && "Plz Create a new tag!"}
+            {/* {this.renderTags()} */}
             
         </div>);
     }
