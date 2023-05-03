@@ -2,11 +2,12 @@
 
 import React, { Component } from 'react';
 class Counter extends Component {
-    state = { // state contains any data that the component needs
-        count : this.props.counter.value,
-        // imageURL : "https://picsum.photos/200",
-        tags:["tag1","tag2","tag3"]
-    };
+
+    // state = { // state contains any data that the component needs
+    //     count : this.props.counter.value,
+    //     // imageURL : "https://picsum.photos/200",
+    //     tags:["tag1","tag2","tag3"]
+    // };
 
     // renderTags(){
     //     if(this.state.tags.length ===0) return <p>There are no tags.</p>;
@@ -22,17 +23,15 @@ class Counter extends Component {
     // handleIncrement(){
     //     console.log('increment clicked',this);
 
-    handleIncrement = product=>{
-
-        console.log(product);
-        this.setState({count: this.state.count+1});
-
+    // handleIncrement =() =>{
+    //     this.setState({count: this.state.count+1});
+    // };
 
         // console.log('increment clicked',this);
         //this -- obj.method();
         //function();
 
-    };
+    
 
     // doHandleIncrement = () => {
 
@@ -42,7 +41,7 @@ class Counter extends Component {
 
     render() { 
 
-        console.log('props',this.props);
+        // console.log('props',this.props);
 
 
         return (
@@ -55,23 +54,26 @@ class Counter extends Component {
             {/* Inline styling in next line..can be done by referencing the property ('made under the classes) */}
 
             <span style={{ color: "black",fontWeight: 'bold', fontSize :16 }} className={this.getBadgeClasses()}>{this.formatCount()}</span> 
-            <button onClick = { () => this.handleIncrement({id:1})} className='btn btn-secondary btn-sm'>Increment</button>
-            {this.state.tags.length === 0 && "Plz Create a new tag!"}
+
+            <button 
+            onClick = { () => this.props.onIncrement(this.props.counter)}
+                className='btn btn-secondary btn-sm'>Increment</button>
+            {/* {this.state.tags.length === 0 && "Plz Create a new tag!"} */}
             {/* {this.renderTags()} */}
             
-            <button onClick={()=>this.props.onDelete(this.props.counter.id)} class="btn btn-danger btn-sm m-3">Delete</button>
+            <button onClick={()=>this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-3">Delete</button>
         </div>);
     }
 
     getBadgeClasses() {
         let classes = "badge m-2 text-bg-";
-        classes += (this.state.count === 0) ? "warning" : "primary";
+        classes += (this.props.counter.value === 0) ? "warning" : "primary";
         return classes;
     }
-
+ 
     formatCount(){
-        const {count} = this.state; // in the count variable , we are picking the count property of this.state
-        return count === 0 ? 'Zero' : count; //JSX expressions are compiled to react elements
+        const {value} = this.props.counter; // in the count variable , we are picking the count property of this.state
+        return value === 0 ? 'Zero' : value; //JSX expressions are compiled to react elements
     }
 }
  

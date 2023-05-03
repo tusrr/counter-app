@@ -11,6 +11,15 @@ class Counters extends Component {
         ]
      } 
 
+     handleIncrement = counter =>{
+        const counters= [...this.state.counters];
+        const index = counters.indexOf(counter);
+        counters[index]={...counter};
+        counters[index].value++;
+        // console.log(this.state.counters[index]);
+        this.setState({counters});
+     }
+
      handleReset = () =>{
         const counters = this.state.counters.map(c=>{
             c.value = 0;
@@ -19,6 +28,7 @@ class Counters extends Component {
 // changed state..but not observed on dom--bcoz-- we are updating the value property 
 // based on what we get from our props -- this is executed 
 // only once when an instance of counter component is created
+        this.setState({counters});
      };
 
      handleDelete= (counterId)=>{
@@ -33,12 +43,13 @@ class Counters extends Component {
         return (<div> 
 
             <button onClick={this.handleReset}
-            type="button" class="btn btn-primary  m-3 ">Reset</button>
+            type="button" className="btn btn-primary  m-3 ">Reset</button>  
 
             {this.state.counters.map(counter =>(
             <Counter 
             key={counter.id} //used internally by react 
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
             // value={counter.value} 
             // id={counter.id}
             counter={counter}
