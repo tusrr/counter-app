@@ -1,17 +1,38 @@
 import React, { Component } from 'react';
 
-class NavBar extends Component {
-    render() { 
-        return (
+// stateless functional components : in this navbar component, we just have a render method,
+// we dont have event handlers, helper methods to calculate values,
+// we are getting all the data via props..in this situation we can convert
+// this component into stateless functional components.
+// shortcut for stateless functional components: sfc
+//  just like
+// shortcut for class components: cc
 
-    <nav className="navbar bg-light">
+const NavBar = ({totalCounters})=>{
+return (
+  
+  <nav className="navbar bg-dark">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Navbar</a>
+  <a className="navbar-brand" href="#" style={{ color: "white", fontSize :20 }}> <i>ReactProj- Counters</i>  
+   <span className="badge rounded-pill text-bg-secondary">{totalCounters}</span>
+  </a>
   </div>
-</nav>
+  </nav>
+      );
+};
 
-        );
-    }
-}
+export default NavBar ;
  
-export default NavBar;
+ //in Class Components, we reference using this.props
+//  in fc, we need to add props as fn parameter and then remove this
+// React will pass props as argument during runtime 
+
+
+
+// object destr --- we here have single references to props object,
+// we might have multiple reference , we can use object destructuring
+
+
+
+
+
