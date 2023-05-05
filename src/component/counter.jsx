@@ -74,7 +74,7 @@ class Counter extends Component {
 
         return (
         <div className="row">
-            <div className="col-1">
+            <div className="col-2">
                 <span
                  style={{ color: "black",fontWeight: 'bold', fontSize :16 }} 
             className={this.getBadgeClasses()}>{this.formatCount()}</span> 
