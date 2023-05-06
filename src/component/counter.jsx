@@ -3,25 +3,25 @@
 import React, { Component } from 'react';
 class Counter extends Component {
 
-    componentDidUpdate(prevProps,prevState){
-        //  we can compare new state,,old state..or new props, old props and can make ajax call to get new data
-        console.log('prevProps',prevProps);
-        console.log('prevState',prevState);
-        if(prevProps.counter.value !== this.props.counter.value){
-            // Ajax call and get new data from the server
-        }
+    // componentDidUpdate(prevProps,prevState){
+    //     //  we can compare new state,,old state..or new props, old props and can make ajax call to get new data
+    //     console.log('prevProps',prevProps);
+    //     console.log('prevState',prevState);
+    //     if(prevProps.counter.value !== this.props.counter.value){
+    //         // Ajax call and get new data from the server
+    //     }
 
-    }
+    // }
 
 
-    componentWillUnmount(){
-        // This method is called just before when a element is about to be removed/deleted
-        // we have new virtual dom- that has 1 less counter--react will compare this with old virtual dom
-        // it figures out one counter is removed, then it will call componentwillunmount
-        // before removing the counter from teh dom and this it gives  an opportunity
-        // to do any kind of cleanup --so if we hv set up timers or listeners , we can remove them before removing the counter otherwise it will endup with memory leaks
-        console.log('Counter-Unmount');
-    }
+    // componentWillUnmount(){
+    //     // This method is called just before when a element is about to be removed/deleted
+    //     // we have new virtual dom- that has 1 less counter--react will compare this with old virtual dom
+    //     // it figures out one counter is removed, then it will call componentwillunmount
+    //     // before removing the counter from teh dom and this it gives  an opportunity
+    //     // to do any kind of cleanup --so if we hv set up timers or listeners , we can remove them before removing the counter otherwise it will endup with memory leaks
+    //     console.log('Counter-Unmount');
+    // }
 
 
 
@@ -67,7 +67,7 @@ class Counter extends Component {
     // };
 
     render() { 
-        console.log('Counter-rendered');
+        // console.log('Counter-rendered');
 
         // console.log('props',this.props);
 

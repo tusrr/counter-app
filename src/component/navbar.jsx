@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 // shortcut for class components: cc
 
 const NavBar = ({totalCounters})=>{
-  console.log('NavBar-rendered');
+  // console.log('NavBar-rendered');
   // we cant use lifecycle hooks inside sfc..bcoz here we have 
   // a single fn that returns the o/p of the component..
   // so to use lifecycle hooks, we shud just use class component

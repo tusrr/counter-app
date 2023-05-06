@@ -5,7 +5,7 @@ class Counters extends Component {
    
 
     render() { 
-        console.log('Counters-rendered');
+        // console.log('Counters-rendered');
 
 
         const {onReset,counters,onDelete,onIncrement,onDecrement} = this.props;

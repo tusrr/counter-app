@@ -16,19 +16,20 @@ class App extends Component {
     ]
  } 
 // 1st Lifecycle hook
-constructor(props){
-  super(props);
-  console.log('App-Constructor',this.props);
-  // this.state= this.state.something -- if u need to change the state, u can do it directly, we dont call,,
-  // this.setState()--(will throw error) bcoz it is used when a component is rendered and placed in dom 
-}
+// constructor(props){
+//   super(props);
+//   console.log('App-Constructor',this.props);
+//   // this.state= this.state.something -- if u need to change the state, u can do it directly, we dont call,,
+//   // this.setState()--(will throw error) bcoz it is used when a component is rendered and placed in dom 
+// }
+
 // 2nd Lifecycle hook
 
- componentDidMount(){
-  // This method is called when a component is rendered into dom.
-  //AJAX CALL: This method is used to get data from the server and pass this list to [this.setState({movies})] for vidly
-  console.log('App- mounted');
- }
+//  componentDidMount(){
+//   // This method is called when a component is rendered into dom.
+//   //AJAX CALL: This method is used to get data from the server and pass this list to [this.setState({movies})] for vidly
+//   console.log('App- mounted');
+//  }
 
  handleIncrement = counter =>{
     const counters= [...this.state.counters];
@@ -65,7 +66,7 @@ constructor(props){
  };
 //  3rd lifecycle hook
   render() { 
-    console.log('App-rendered');
+    // console.log('App-rendered');
     return (
 
       <React.Fragment>
